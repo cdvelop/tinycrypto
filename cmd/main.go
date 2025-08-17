@@ -20,22 +20,24 @@ func main() {
 	<-c
 }
 
+var engine = tinycrypto.New()
+
 func encrypt(this js.Value, args []js.Value) interface{} {
 	plaintext := jsValueToBytes(args[0])
 	key := jsValueToBytes(args[1])
-	ciphertext, err := tinycrypto.Encrypt(plaintext, key)
+	ciphertext, err := engine.Encrypt(plaintext, key)
 	return bytesToJsValue(ciphertext, err)
 }
 
 func decrypt(this js.Value, args []js.Value) interface{} {
 	ciphertext := jsValueToBytes(args[0])
 	key := jsValueToBytes(args[1])
-	plaintext, err := tinycrypto.Decrypt(ciphertext, key)
+	plaintext, err := engine.Decrypt(ciphertext, key)
 	return bytesToJsValue(plaintext, err)
 }
 
 func generateKeyPair(this js.Value, args []js.Value) interface{} {
-	pub, priv, err := tinycrypto.GenerateKeyPair()
+	pub, priv, err := engine.GenerateKeyPair()
 	if err != nil {
 		return js.ValueOf(map[string]interface{}{"error": err.Error()})
 	}
@@ -48,21 +50,21 @@ func generateKeyPair(this js.Value, args []js.Value) interface{} {
 func encryptAsymmetric(this js.Value, args []js.Value) interface{} {
 	plaintext := jsValueToBytes(args[0])
 	publicKey := jsValueToBytes(args[1])
-	ciphertext, err := tinycrypto.EncryptAsymmetric(plaintext, publicKey)
+	ciphertext, err := engine.EncryptAsymmetric(plaintext, publicKey)
 	return bytesToJsValue(ciphertext, err)
 }
 
 func decryptAsymmetric(this js.Value, args []js.Value) interface{} {
 	ciphertext := jsValueToBytes(args[0])
 	privateKey := jsValueToBytes(args[1])
-	plaintext, err := tinycrypto.DecryptAsymmetric(ciphertext, privateKey)
+	plaintext, err := engine.DecryptAsymmetric(ciphertext, privateKey)
 	return bytesToJsValue(plaintext, err)
 }
 
 func sign(this js.Value, args []js.Value) interface{} {
 	message := jsValueToBytes(args[0])
 	privateKey := jsValueToBytes(args[1])
-	signature, err := tinycrypto.Sign(message, privateKey)
+	signature, err := engine.Sign(message, privateKey)
 	return bytesToJsValue(signature, err)
 }
 
@@ -70,7 +72,7 @@ func verify(this js.Value, args []js.Value) interface{} {
 	message := jsValueToBytes(args[0])
 	signature := jsValueToBytes(args[1])
 	publicKey := jsValueToBytes(args[2])
-	ok, err := tinycrypto.Verify(message, signature, publicKey)
+	ok, err := engine.Verify(message, signature, publicKey)
 	if err != nil {
 		return js.ValueOf(map[string]interface{}{"error": err.Error()})
 	}
