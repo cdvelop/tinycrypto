@@ -1,5 +1,21 @@
 module github.com/waj334/tinygo-cryptoauthlib
 
-go 1.19
+go 1.22.0
 
-require github.com/howeyc/crc16 v0.0.0-20171223171357-2b2a61e366a6
+toolchain go1.24.3
+
+require (
+	github.com/cdvelop/tinystring v0.1.62
+	github.com/playwright-community/playwright-go v0.5200.0
+	github.com/stretchr/testify v1.10.0
+)
+
+require (
+	github.com/davecgh/go-spew v1.1.1 // indirect
+	github.com/deckarep/golang-set/v2 v2.7.0 // indirect
+	github.com/go-jose/go-jose/v3 v3.0.4 // indirect
+	github.com/go-stack/stack v1.8.1 // indirect
+	github.com/kr/text v0.2.0 // indirect
+	github.com/pmezard/go-difflib v1.0.0 // indirect
+	gopkg.in/yaml.v3 v3.0.1 // indirect
+)
