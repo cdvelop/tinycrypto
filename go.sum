@@ -1,5 +1,5 @@
-github.com/cdvelop/tinystring v0.1.65 h1:wLX2eQi6p4aBSWdCmfMJGR4hkeg6zcABLS2jxJefbSQ=
-github.com/cdvelop/tinystring v0.1.65/go.mod h1:85ltrACJtjf1Zu/o8kqwHGKAiN0oBwb+TR2tkXdURJo=
+github.com/cdvelop/tinystring v0.5.0 h1:Eyb+3MSh14jeLYKwbGdXZwD2G5oXzl6DiTKSo8DbWFc=
+github.com/cdvelop/tinystring v0.5.0/go.mod h1:85ltrACJtjf1Zu/o8kqwHGKAiN0oBwb+TR2tkXdURJo=
 github.com/creack/pty v1.1.9/go.mod h1:oKZEueFk5CKHvIhNR5MUki03XCEU+Q6VDXinZuGJ33E=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
