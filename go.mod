@@ -5,7 +5,7 @@ go 1.22.0
 toolchain go1.24.3
 
 require (
-	github.com/cdvelop/tinystring v0.4.0
+	github.com/cdvelop/tinystring v0.1.65
 	github.com/playwright-community/playwright-go v0.5200.0
 	github.com/stretchr/testify v1.11.1
 )
